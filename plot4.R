@@ -1,3 +1,11 @@
+# the goal of the project : Our overall goal here is simply to examine how household energy usage varies over a 2-day period in February, 2007
+# download file only in part 1
+if (!file.exists("household_power_consumption.txt")) {
+    download.file("https://d396qusza40orc.cloudfront.net/exdata%2Fdata%2Fhousehold_power_consumption.zip", destfile="rawData.zip") 
+    unzip("rawData.zip")
+}
+
+
 ## Reading the data
 ##read table
 df <- read.table("household_power_consumption.txt", sep=";", header=T, colClasses=c("character", "character", rep("numeric", 7)), na.strings="?") 
